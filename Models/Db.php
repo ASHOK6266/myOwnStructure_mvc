@@ -3,8 +3,19 @@
 
 /*
 
-Explanation of singleton pattern in php 
+Explanation of singleton pattern in php .
 
+*Singleteon restricts the instantiation of the class 
+
+*Singleteon pattern used so that the application is faster 
+
+//$user1 = Database::Singleton();
+//$user2 = Database::Singleton();
+//$user3 = Database::Singleton();
+
+No matter how any times the object is created as we are using Singleteon pattern 
+the public function singleton checks if the instance exists or not. if the instance exist 
+it returns the self::$instance. If instance does not exist it creates a new instance.
 
 */
 
@@ -13,9 +24,9 @@ class Database
 {
     private static $instance;
     private $servername = 'localhost';
-    private $dbname = 'myownmvc';
-    private $username='root';
-    private $password='root';
+    private $dbname = ''; // Your database name
+    private $username=''; //Your username for mysql something like root
+    private $password=''; //your mysql password
 
     private function __construct()
     {
@@ -32,6 +43,6 @@ class Database
     }
 }
 
-$user1 = Database::Singleton();
+
 
 ?>
