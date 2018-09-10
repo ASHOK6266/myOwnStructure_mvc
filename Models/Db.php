@@ -20,17 +20,19 @@ it returns the self::$instance. If instance does not exist it creates a new inst
 */
 
 
-class Database
+class Database extends PDO
 {
+    private $conn;
+
     private static $instance;
     private $servername = 'localhost';
-    private $dbname = ''; // Your database name
-    private $username=''; //Your username for mysql something like root
-    private $password=''; //your mysql password
+    private $dbname = 'myOwnStructure_mvc'; // Your database name
+    private $username='root'; //Your username for mysql something like root
+    private $password='root'; //your mysql password
 
     private function __construct()
     {
-        $conn = new PDO("mysql:host={$this->servername};dbname={$this->dbname}",$this->username,$this->password);     
+        $this->conn = new PDO("mysql:host={$this->servername};dbname={$this->dbname}",$this->username,$this->password);     
     }
 
     public static function singleton()
@@ -40,6 +42,10 @@ class Database
             self::$instance = new Database();
         }
         return self::$instance;
+    }
+    public function get_connection()
+    {
+        return $this->conn;
     }
 }
 
