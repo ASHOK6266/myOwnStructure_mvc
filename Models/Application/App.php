@@ -1,6 +1,6 @@
 <?php
 
-include('../Db.php');
+include('db.php');
 
 class Tasks
 {
@@ -11,7 +11,7 @@ class Tasks
 		$sql = $databse->get_connection()->prepare("SELECT * from todolist");
 		$sql->execute();
 		$result = $sql->fetchAll();
-		var_dump($result);
+		//var_dump($result); // checking using var_dump to display the result
 	}
 	/*
 	public function get_task($id)
