@@ -26,9 +26,9 @@ class Database extends PDO
 
     private static $instance;
     private $servername = 'localhost';
-    private $dbname = 'myOwnStructure_mvc'; // Your database name
-    private $username='root'; //Your username for mysql something like root
-    private $password='root'; //your mysql password
+    private $dbname = ''; // Your database name
+    private $username=''; //Your username for mysql something like root
+    private $password=''; //your mysql password
 
     private function __construct()
     {
