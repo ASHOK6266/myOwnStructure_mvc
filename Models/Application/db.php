@@ -13,6 +13,8 @@ Explanation of singleton pattern in php .
 //$user2 = Database::Singleton();
 //$user3 = Database::Singleton();
 
+Consider different objects instantiating same class
+
 No matter how any times the object is created as we are using Singleteon pattern 
 the public function singleton checks if the instance exists or not. if the instance exist 
 it returns the self::$instance. If instance does not exist it creates a new instance.

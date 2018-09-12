@@ -12,6 +12,7 @@ class AppController
 		//var_dump($display);
 		foreach ($display as $key => $displays) 
 		{
+			// htmlspecialchars and nl2br is used for security purposes
 			 $display[$key]['title'] = htmlspecialchars($displays['title']);
 			 $display[$key]['description'] = nl2br(htmlspecialchars($displays['description']));
 		}
@@ -23,8 +24,8 @@ class AppController
 
  //Below instatiation is also for testing purposes
 
-$show = new AppController();
-$show->show_tasks();
+//$show = new AppController();
+//$show->show_tasks();
 
 
 

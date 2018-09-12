@@ -12,7 +12,7 @@ class Tasks
 		$sql->execute();
 		$result = $sql->fetchAll();
 		//var_dump($result); // checking using var_dump to display the result
-		return ($result);
+		return ($result);	
 	}
 	/*
 	public function get_task($id)
